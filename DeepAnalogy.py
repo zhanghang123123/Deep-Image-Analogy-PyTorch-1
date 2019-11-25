@@ -22,6 +22,7 @@ def analogy(img_A, img_BP, config):
         raise NotImplementedError('cpu mode is not supported yet')
 
     # preparing data
+    # np.transpose( xxx,  (2, 0, 1))   # 将 C x H x W 转化为 H x W x C
     img_A_tensor = torch.FloatTensor(img_A.transpose(2, 0, 1))
     img_BP_tensor = torch.FloatTensor(img_BP.transpose(2, 0, 1))
     img_A_tensor, img_BP_tensor = img_A_tensor.to(device), img_BP_tensor.to(device)
