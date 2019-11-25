@@ -23,6 +23,7 @@ def analogy(img_A, img_BP, config):
 
     # preparing data
     # np.transpose( xxx,  (2, 0, 1))   # 将 C x H x W 转化为 H x W x C
+    #（torch.Tensor 高维矩阵的表示： （nSample）x C x H x W， torch.tensor读入（多张）图片后的保存格式）
     img_A_tensor = torch.FloatTensor(img_A.transpose(2, 0, 1))
     img_BP_tensor = torch.FloatTensor(img_BP.transpose(2, 0, 1))
     img_A_tensor, img_BP_tensor = img_A_tensor.to(device), img_BP_tensor.to(device)
